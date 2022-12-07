@@ -64,9 +64,65 @@ const Animal = mongoose.model('Animal', animalSchema);
 const Person = mongoose.model('Person', personSchema);
 
 //api functions
+//animals
+app.get('/api/animals', async (req, res) => {
+    try {
+        let animals = await Animal.find();
+        res.send(animals);
+    } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+});
+
+app.post('/api/animals', async (req,res) => {
+   const animal = new Animal({
+        name: req.body.name,
+        desc: {
+            height: req.body.height,
+            weight: req.body.weight,
+            habitat: req.body.habitat,
+            diet: req.body.diet
+        }
+   });
+   try {
+        await animal.save();
+        res.send({animal:animal});
+   } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+   }
+});
+
+//people
 app.get('/api/people', async (req, res) => {
-    let people = await Person.find();
-    res.send(people);
+    try {
+        let people = await Person.find();
+        res.send(people);
+    } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+});
+
+app.post('/api/people', async (req,res) => {
+   const person = new Person({
+        name: req.body.name,
+        age: req.body.age,
+        desc: {
+            height: req.body.height,
+            weight: req.body.weight,
+            color: req.body.color,
+            animal: req.body.animal
+        }
+   });
+   try {
+        await person.save();
+        res.send({person:person});
+   } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+   }
 });
 
 

@@ -8,7 +8,7 @@ const people = [
         color: 'Orange',
         animal: 'Shark'
     }
-}
+},
 {
     name: 'Carole Baskin',
     age: 61,
@@ -18,7 +18,7 @@ const people = [
         color: 'Blue',
         animal: 'Tiger'
     }
-}
+},
 {
     name: 'Taylor Swift',
     age: 32,
@@ -28,7 +28,7 @@ const people = [
         color: 'Purple',
         animal: 'Cat'
     }
-}
+},
 {
     name: 'Shaggy Rogers',
     age: 17,
@@ -38,7 +38,7 @@ const people = [
         color: 'Green',
         animal: 'Dog'
     }
-}
+},
 {
     name: 'Captain Ahab',
     age: 58,
@@ -48,7 +48,7 @@ const people = [
         color: 'Blue',
         animal: 'Whale'
     }
-}
+},
 {
     name: 'John Cena',
     age: 45,
@@ -58,7 +58,7 @@ const people = [
         color: 'Green',
         animal: 'Tiger'
     }
-}
+},
 {
     name: 'Jimmy Fallon',
     age: 48,
@@ -68,7 +68,7 @@ const people = [
         color: 'Blue',
         animal: 'Dog'
     }
-}
+},
 {
     name: 'Kanye West',
     age: 45,
@@ -78,7 +78,7 @@ const people = [
         color: 'Black',
         animal: 'Shark'
     }
-}
+},
 {
     name: 'Barack Obama',
     age: 61,
@@ -88,7 +88,7 @@ const people = [
         color: 'White',
         animal: 'Cat'
     }
-}
+},
 {
     name: 'Buddy The Elf',
     age: 30,
