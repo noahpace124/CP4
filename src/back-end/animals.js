@@ -1,6 +1,6 @@
 const animals = [
 {
-name: 'Cat',
+    name: 'Cat',
     height: '0\'9\"',
     weight: '11 lbs',
     habitat: 'Land',

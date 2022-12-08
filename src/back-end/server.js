@@ -87,6 +87,17 @@ app.post('/api/animals', async (req,res) => {
         res.sendStatus(500);
    }
 });
+app.delete('/api/animals/:id', async (req, res) => {
+   try {
+       await Animal.deleteOne({
+           _id: req.params.id
+       });
+       res.sendStatus(200);
+   } catch(err) {
+       console.log(err);
+       res.sendStatus(500);
+   }
+});
 
 //people
 app.get('/api/people', async (req, res) => {
@@ -99,7 +110,7 @@ app.get('/api/people', async (req, res) => {
     }
 });
 
-app.post('/api/people', async (req,res) => {
+app.post('/api/people', async (req, res) => {
    const person = new Person({
         name: req.body.name,
         age: req.body.age,
@@ -114,6 +125,17 @@ app.post('/api/people', async (req,res) => {
    } catch(err) {
         console.log(err);
         res.sendStatus(500);
+   }
+});
+app.delete('/api/people/:id', async (req, res) => {
+   try {
+       await Person.deleteOne({
+           _id: req.params.id
+       });
+       res.sendStatus(200);
+   } catch(err) {
+       console.log(err);
+       res.sendStatus(500);
    }
 });
 
