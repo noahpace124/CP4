@@ -27,12 +27,10 @@ mongoose.connect('mongodb://localhost:27017/test', {
 //setting up mongo schemas
 const animalSchema = new mongoose.Schema({
     name: String,
-    desc: {
-        height: String,
-        weight: String,
-        habitat: String,
-        diet: String
-    }
+    height: String,
+    weight: String,
+    habitat: String,
+    diet: String
 });
 animalSchema.virtual('id')
   .get(function() {
@@ -45,12 +43,10 @@ animalSchema.set('toJSON', {
 const personSchema = new mongoose.Schema({
     name: String,
     age: Number,
-    desc: {
-        height: String,
-        weight: String,
-        color: String,
-        animal: String
-    }
+    height: String,
+    weight: String,
+    color: String,
+    animal: String
 });
 personSchema.virtual('id')
   .get(function() {
@@ -78,12 +74,10 @@ app.get('/api/animals', async (req, res) => {
 app.post('/api/animals', async (req,res) => {
    const animal = new Animal({
         name: req.body.name,
-        desc: {
-            height: req.body.height,
-            weight: req.body.weight,
-            habitat: req.body.habitat,
-            diet: req.body.diet
-        }
+        height: req.body.height,
+        weight: req.body.weight,
+        habitat: req.body.habitat,
+        diet: req.body.diet
    });
    try {
         await animal.save();
@@ -109,12 +103,10 @@ app.post('/api/people', async (req,res) => {
    const person = new Person({
         name: req.body.name,
         age: req.body.age,
-        desc: {
-            height: req.body.height,
-            weight: req.body.weight,
-            color: req.body.color,
-            animal: req.body.animal
-        }
+        height: req.body.height,
+        weight: req.body.weight,
+        color: req.body.color,
+        animal: req.body.animal
    });
    try {
         await person.save();
